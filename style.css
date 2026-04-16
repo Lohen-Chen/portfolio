@@ -49,7 +49,6 @@ body {
 
 #text .bio {
     margin: 0 0 1rem;
-    line-height: 1.6;
 }
 
 #text .links {
@@ -76,14 +75,39 @@ a:hover {
 }
 
 #content {
-    background-color: #dce3e3;
     flex: 1;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+}
+
+.content {
+    background-color: #dce3e3; 
+    display: flex;
+    flex-direction: row;
+    margin-top: 2rem;
+    padding: 10px;
+    align-items: flex-start;
+}
+
+.media-hover {
+    position: relative;
+    width: 15em;
+    flex-shrink: 0;
+}
+
+.media-hover video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.media-hover video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
 }
 
 #content p {
     padding: 0;
-    margin: 0;
+    margin: 0 1.5rem 0;
 }
