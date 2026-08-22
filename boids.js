@@ -39,8 +39,8 @@ class Boid {
         this.vy = Math.sin(angle) * speed;
         this.ax = 0;
         this.ay = 0;
-        this.r = 1.3 + Math.random();
-        this.color = GOLDS[Math.floor(Math.random() * GOLDS.length)];
+        this.r = 1.8;
+        this.color = '#DAAA00';
     }
 
     // Steer toward a desired direction, limited to MAX_FORCE.
@@ -129,9 +129,11 @@ class Boid {
 
 const boids = [];
 
-function spawnInitial() {
-    const count = Math.min(Math.floor((width * height) / 12000), 120);
-    for (let i = 0; i < count; i++) {
+// Top up the population to match the viewport area (never removes
+// boids, so click-spawned extras survive a resize).
+function fillPopulation() {
+    const target = Math.min(Math.floor((width * height) / 12000), 120);
+    while (boids.length < target) {
         boids.push(new Boid(Math.random() * width, Math.random() * height));
     }
 }
@@ -149,7 +151,10 @@ function animate() {
     requestAnimationFrame(animate);
 }
 
-window.addEventListener('resize', resize);
+window.addEventListener('resize', () => {
+    resize();
+    fillPopulation();
+});
 
 // Clicking anywhere (except a link) spawns a new boid at the cursor.
 window.addEventListener('pointerdown', (e) => {
@@ -159,5 +164,5 @@ window.addEventListener('pointerdown', (e) => {
 });
 
 resize();
-spawnInitial();
+fillPopulation();
 animate();
