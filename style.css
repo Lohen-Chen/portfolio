@@ -35,6 +35,7 @@ body, html {
     text-align: center;
     max-width: 640px;
     padding: 3rem 1.5rem 0;
+    font-family: "Times New Roman", Times, serif;
 }
 
 #intro h1 {
@@ -59,11 +60,14 @@ a:hover {
     text-decoration: underline;
 }
 
+/* Pinned to the exact center of the viewport. */
 #pages {
-    flex: 1;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     gap: 1.75rem;
 }
