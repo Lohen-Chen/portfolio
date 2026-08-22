@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "portfolio",
+      "runtimeExecutable": "powershell",
+      "runtimeArgs": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\LOHENC~1\\AppData\\Local\\Temp\\claude\\C--Users-Lohen-Chen-Documents-GitHub-portfolio\\4cfc6e6e-3298-4685-8ce5-a04c8c876806\\scratchpad\\serve.ps1"
+      ],
+      "port": 8123
+    }
+  ]
+}
