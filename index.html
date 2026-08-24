@@ -8,39 +8,32 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <script>
+        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
-    <div id="wrapper">
-        <div id="header">
-            <div id="text">
-                <h1>Lohen Chen</h1>
-                <p class="bio">
-                    I am a first year student studying Computer Engineering at Purdue University in West Lafeyette, Indiana. I am interested in robotics, aerospace, embedded systems, and software development. I previously worked at <a href="https://www.fullswinggolf.com/">Full Swing Golf</a> as a software R&D intern building a mini-golf game for full-size, indoor golf simulators.
-                </p>
-                <p class="links">
-                    <a href="mailto:lohen.chen1@gmail.com">Email</a> &nbsp;/&nbsp;
-                    <a href="https://www.linkedin.com/in/lohen-chen-5a550931a/">LinkedIn</a> &nbsp;/&nbsp;
-                    <a href="https://github.com/Lohen-Chen">Github</a> &nbsp;/&nbsp;
-                    <a href="files/Lohen_Chen_Resume.pdf">CV</a>
-                </p>
-            </div>
-            <div id="headshot">
-                <img src="media/headshot.jpg" alt="Lohen Chen" id="headshot-img">
-                <!--Thanks Clairice Shen for this fire photo of me-->
-            </div>
-        </div>
-        <div id="content">
-            <div class="box">
-                <video class="media" muted autoplay loop>
-                    <source src="media/golf.mp4" type="video/mp4">
-                </video>
-            </div>
-            <p style="text-align: center">🚧 This section is still under construction. 🚧</p>
-        </div>
-    </div>
-        <footer>
-            <p style="text-align:center; font-size:12px; color:#888;">&copy; Copyright 2026 Lohen Chen | Loosely based off <a href="https://jonbarron.info/">Jon Barron</a>, remade with flex boxes.</p>
-        </footer>
-    <script src="script.js" defer></script>
+    <canvas id="boids"></canvas>
+    <main id="overlay">
+        <header id="intro">
+            <h1>Lohen Chen</h1>
+            <p class="bio">
+                I am a first year student studying Computer Engineering at Purdue University in West Lafayette, Indiana. I am interested in robotics, aerospace, embedded systems, and software development. I previously worked at <a href="https://www.fullswinggolf.com/">Full Swing Golf</a> as a software R&amp;D intern building a mini-golf game for full-size, indoor golf simulators.
+            </p>
+            <p class="links">
+                <a href="mailto:lohen.chen1@gmail.com">Email</a> &nbsp;/&nbsp;
+                <a href="https://www.linkedin.com/in/lohenchen/">LinkedIn</a> &nbsp;/&nbsp;
+                <a href="https://github.com/Lohen-Chen">Github</a> &nbsp;/&nbsp;
+                <a href="files/lohenchenresume.pdf">CV</a>
+            </p>
+        </header>
+        <nav id="pages">
+            <a href="engineering.html">engineering</a>
+            <a href="work.html">work</a>
+            <a href="coolstuff.html">other cool stuff</a>
+        </nav>
+    </main>
+    <script src="boids.js" defer></script>
 </body>
 </html>
