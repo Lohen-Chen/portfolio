@@ -28,19 +28,23 @@ body, html {
     align-items: center;
 }
 
+/* Scales with the viewport: font tracks height (clamped for
+   readability), width tracks the font via em so line wrapping —
+   and therefore the box's share of the screen (~20vh) — stays
+   proportional as the browser resizes. */
 #intro {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    max-width: 640px;
-    padding: 3rem 1.5rem 1rem;
-    font-size: 1.1rem;
+    max-width: min(46em, 92vw);
+    padding: 2.5vh 1.5rem 1vh;
+    font-size: clamp(0.75rem, 1.8vh, 1.25rem);
     font-family: "Times New Roman", Times, serif;
 }
 
 #intro h1 {
-    margin: 0 0 1rem;
+    margin: 0 0 .25rem;
     font-weight: 600;
 }
 
@@ -86,6 +90,17 @@ a:hover {
     text-decoration: none;
 }
 
+/* On very short viewports (e.g. phones in landscape) the fixed
+   center would collide with the intro, so fall back to normal
+   flow below it. */
+@media (max-height: 500px) {
+    #pages {
+        position: static;
+        transform: none;
+        margin: 2.5rem 0;
+    }
+}
+
 /* Project pages (engineering, work, other) */
 .project {
     max-width: 860px;
@@ -102,7 +117,7 @@ a:hover {
 }
 
 .project h1 {
-    margin: 0 0 2.5rem;
+    margin: 0 0 .75rem;
     font-weight: 600;
     text-align: center;
     font-family: "Times New Roman", Times, serif;
