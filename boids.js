@@ -136,7 +136,24 @@ function fillPopulation() {
     }
 }
 
+// Respect the OS-level reduced-motion preference: show the flock as a
+// still image instead of animating.
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+let animating = false;
+
+function renderStatic() {
+    ctx.fillStyle = '#000';
+    ctx.fillRect(0, 0, width, height);
+    for (const boid of boids) boid.draw();
+}
+
 function animate() {
+    if (reducedMotion.matches) {
+        animating = false;
+        renderStatic();
+        return;
+    }
+
     // Translucent black fill leaves faint golden trails.
     ctx.fillStyle = 'rgba(0, 0, 0, 0.25)';
     ctx.fillRect(0, 0, width, height);
@@ -149,9 +166,21 @@ function animate() {
     requestAnimationFrame(animate);
 }
 
+function start() {
+    if (reducedMotion.matches) {
+        renderStatic();
+    } else if (!animating) {
+        animating = true;
+        requestAnimationFrame(animate);
+    }
+}
+
+reducedMotion.addEventListener('change', start);
+
 window.addEventListener('resize', () => {
     resize();
     fillPopulation();
+    if (reducedMotion.matches) renderStatic();
 });
 
 // Clicking anywhere (except a link) spawns a new boid at the cursor.
@@ -159,8 +188,9 @@ window.addEventListener('pointerdown', (e) => {
     if (e.target instanceof Element && e.target.closest('a')) return;
     boids.push(new Boid(e.clientX, e.clientY));
     if (boids.length > MAX_BOIDS) boids.shift();
+    if (reducedMotion.matches) renderStatic();
 });
 
 resize();
 fillPopulation();
-animate();
+start();
