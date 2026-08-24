@@ -39,7 +39,7 @@ body, html {
     text-align: center;
     max-width: min(46em, 92vw);
     padding: 2.5vh 1.5rem 1vh;
-    font-size: clamp(0.75rem, 1.8vh, 1.25rem);
+    font-size: clamp(0.75rem, 1.7vh, 1.25rem);
     font-family: "Times New Roman", Times, serif;
 }
 
