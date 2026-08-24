@@ -14,8 +14,6 @@ const SEPARATION_WEIGHT = 1.6;
 const ALIGNMENT_WEIGHT = 1.0;
 const COHESION_WEIGHT = 0.9;
 
-const GOLDS = ['#ffd700', '#f5c542', '#e6b422', '#ffcf40', '#d4af37'];
-
 let width, height;
 
 function resize() {
