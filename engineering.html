@@ -3,14 +3,50 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Engineering</title>
-    <link rel="stylesheet" href="engineering.css">
+    <title>Engineering — Lohen Chen</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <script>
+        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
     <script defer src="/_vercel/insights/script.js"></script>
 </head>
-<body>
-    
+<body class="project-page">
+    <main class="project">
+        <p class="back"><a href="index.html">&larr; home</a></p>
+        <h1>STM32 Handheld Game Console (Work in progress)</h1>
+        <div class="gallery">
+            <figure>
+                <img src="media/stm32game/3d.png" alt="3D render of the handheld game console PCB">
+                <figcaption>3D render of the board - LED matrix display, D-pad and action buttons</figcaption>
+            </figure>
+            <figure>
+                <img src="media/stm32game/pcb.png" alt="PCB layout of the console">
+                <figcaption>PCB layout.</figcaption>
+            </figure>
+            <figure>
+                <img src="media/stm32game/overview.jpg" alt="Top-level schematic overview">
+                <figcaption>Top-level schematic - input devices, MCU, display, and power blocks.</figcaption>
+            </figure>
+            <figure>
+                <img src="media/stm32game/mcu.jpg" alt="MCU schematic">
+                <figcaption>MCU - STM32C031K6T6 with boot circuitry and bus breakouts.</figcaption>
+            </figure>
+            <figure>
+                <img src="media/stm32game/display.jpg" alt="Display schematic">
+                <figcaption>Display - SN74HC595 shift registers driving the LED matrix rows and columns.</figcaption>
+            </figure>
+            <figure>
+                <img src="media/stm32game/inputs.jpg" alt="Input devices schematic">
+                <figcaption>Inputs - pushbuttons on an SN74HC165 shift register, LIS331DLH accelerometer, buzzer, IR, and potentiometers.</figcaption>
+            </figure>
+            <figure>
+                <img src="media/stm32game/battery.jpg" alt="Power schematic">
+                <figcaption>Power - battery and switch connectors into an LM1085 3.3&nbsp;V regulator.</figcaption>
+            </figure>
+        </div>
+    </main>
 </body>
 </html>
