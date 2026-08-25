@@ -11,6 +11,7 @@
     <meta property="og:title" content="Work — Lohen Chen">
     <meta property="og:description" content="Work experience of Lohen Chen, including software R&D at Full Swing Golf.">
     <meta property="og:url" content="https://lohenchen.com/work.html">
+    <meta property="og:image" content="https://lohenchen.com/media/fullswing/myownswing-poster.jpg">
     <meta name="twitter:card" content="summary">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="work.css">
@@ -25,8 +26,25 @@
 <body class="project-page">
     <main class="project">
         <p class="back"><a href="index.html">&larr; back</a></p>
-        <h1>Work</h1>
-        <p class="coming-soon">Coming soon.</p>
+        <h1>Software Engineering Internship @ Full Swing Golf</h1>
+        <div class="video-grid">
+            <figure>
+                <video src="media/fullswing/initialtesting.mp4" autoplay muted loop playsinline controls width="960" height="1280"></video>
+                <figcaption>Initial testing on a gen 1 simulator rig. I was suprised when the sensors actually managed to track and translate the ball's motion (somewhat) successfully into the mini-golf game</figcaption>
+            </figure>
+            <figure>
+                <video src="media/fullswing/debug.mp4" autoplay muted loop playsinline controls width="720" height="1280"></video>
+                <figcaption>Continued testing/debugging on gen 2 rig. Kept having the same physics issues as the gen 1 rig.</figcaption>
+            </figure>
+            <figure>
+                <video src="media/fullswing/debugwbailey.mp4" autoplay muted loop playsinline controls width="720" height="1280"></video>
+                <figcaption>Testing alongside my awesome mentor Bailey. Still trying to get physics to work alongside testing for whether the game would correctly enable or disable the sensors (it did).</figcaption>
+            </figure>
+        </div>
+        <figure class="video-feature">
+            <video src="media/fullswing/myownswing.mp4" poster="media/fullswing/myownswing-poster.jpg" controls playsinline preload="metadata" width="720" height="1280"></video>
+            <figcaption>Had to play golf at work for at least an hour a day. Here was my golf swing with a 7 iron after a little less than a month!</figcaption>
+        </figure>
     </main>
 </body>
 </html>

@@ -22,9 +22,67 @@
     font-family: "Times New Roman", Times, serif;
 }
 
-.coming-soon {
-    margin-top: 3rem;
+/* Short portrait clips side by side at equal heights (their aspect
+   ratios differ); collapses to a stack on narrow screens. */
+.video-grid {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+.video-grid figure {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.video-grid video {
+    height: 400px;
+    width: auto;
+    max-width: 100%;
+}
+
+/* Longer featured clip below the grid, kept narrow since it's
+   portrait video. */
+.video-feature {
+    margin: 2.5rem 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.video-feature video {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+}
+
+.video-grid figcaption,
+.video-feature figcaption {
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
     color: #aaa;
-    font-weight: 300;
-    letter-spacing: 0.08em;
+    text-align: center;
+    /* Match the video's width instead of pushing the figure wider:
+       contribute zero intrinsic width, then stretch to the figure. */
+    width: 0;
+    min-width: 100%;
+}
+
+@media (max-width: 640px) {
+    .video-grid video {
+        height: auto;
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .video-feature video {
+        max-width: 320px;
+    }
 }
