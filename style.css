@@ -91,6 +91,39 @@ a:hover {
     text-decoration: none;
 }
 
+/* Project write-ups: a centered, readable column between the
+   title and the media (shared by engineering/work/coolstuff). */
+.project .writeup {
+    max-width: 62ch;
+    margin: 0.5rem auto 1.25rem;
+    text-align: center;
+    line-height: 1.7;
+    color: #ddd;
+}
+
+.project .skills {
+    margin: 0 auto;
+    text-align: center;
+    font-size: 0.9rem;
+    letter-spacing: 0.03em;
+    color: #999;
+}
+
+.project .skills strong {
+    color: #DAAA00;
+    font-weight: 600;
+}
+
+/* Thin gold rule separating the write-up from the media below. */
+.project .rule {
+    width: 72px;
+    height: 1px;
+    border: 0;
+    background-color: #DAAA00;
+    opacity: 0.6;
+    margin: 2rem auto 0.5rem;
+}
+
 /* On very short viewports (e.g. phones in landscape) the fixed
    center would collide with the intro, so fall back to normal
    flow below it. */
