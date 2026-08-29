@@ -22,9 +22,83 @@
     font-family: "Times New Roman", Times, serif;
 }
 
-.coming-soon {
-    margin-top: 3rem;
+/* Each project on the page. */
+.entry {
+    width: 100%;
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.entry h2 {
+    margin: 0 0 1.75rem;
+    font-weight: 600;
+    text-align: center;
+    font-family: "Times New Roman", Times, serif;
+}
+
+.gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    width: 100%;
+}
+
+.gallery figure {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gallery img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Videos don't need the full column width. */
+.gallery video {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+}
+
+/* Mid-size images that shouldn't span the full column. */
+.gallery img.medium {
+    max-width: 560px;
+    width: 100%;
+}
+
+/* Front and back/isometric CAD views side by side; stacks on
+   narrow screens. */
+.pair {
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem;
+    width: 100%;
+}
+
+.pair figure {
+    flex: 1;
+    min-width: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (max-width: 640px) {
+    .pair {
+        flex-direction: column;
+        gap: 3rem;
+    }
+}
+
+.gallery figcaption {
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
     color: #aaa;
-    font-weight: 300;
-    letter-spacing: 0.08em;
+    text-align: center;
+    max-width: 640px;
 }
